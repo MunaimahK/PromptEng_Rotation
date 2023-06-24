@@ -1,5 +1,6 @@
 {
   {
+    "id":"1",
     "prompt":"I am trying to create physics problems based on a template using a technique called rotation of variables. Here is an example.
 
 [A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.]
@@ -26,15 +27,17 @@ ask m",
     "questions":"Will range come into play? Should the prompt include a range for variables?"
   },
   {
-    "prompt":"",
-    "result":"",
-    "notes":"",
+    "id":"2",
+    "prompt":"Question: ask M, v_0, and h",
+    "result":"A rubber bullet of mass m = 0.074 \mathrm{kg} traveling at velocity v_0 = 40 \mathrm{m/s} hits a wooden block initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and the two objects travel together. The effect of gravity on the bullet alone can be ignored. What is the mass M of the wooden block and the maximum height h it will reach after the collision, if the rope remains tight during the entire process? Retain your final answer to 2 decimal places",
+    "notes":"The prompt follows after the prompt with id = 1. The result only rotates firs tvariabel listed",
     "questions":""
   },
   {
-    "prompt":"",
-    "result":"",
-    "notes":"",
-    "questions":""
+    "id":"3"
+    "prompt":"ask v_0",
+    "result":"A rubber bullet of mass m = 0.093 \mathrm{kg} hits a wooden block of mass M = 7 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and the two objects travel together, reaching a maximum height h = 4.21 \mathrm{m}. The effect of gravity on the bullet alone can be ignored. What is the incoming speed of the bullet v_0 before it hits the wooden block? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+    "notes":"uses same initial prompt as id = 1",
+    "questions":"Can this be prompted to rotate all variables in one question?"
   },
 }
