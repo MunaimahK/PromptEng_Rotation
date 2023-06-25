@@ -1,0 +1,73 @@
+I am trying to rotate variables of a physics problem and place all rotated variable problems and its associated information into a JSON Structure. Store key information of a physics problem in JSON strcuture. The JSON includes a key for the id number, problem text, the answer, what varaible the problem solves for, an svg image, and a section for a wolfram alpha string. The wolfram alpha string is left blank.
+
+the empty JSON looks like this:
+
+{
+            "id":"",
+            "problem-text":"",
+            "solution":"",
+            "solves-for":"",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+Here is an example
+
+A rubber bullet of mass m = 0.23 \mathrm{kg} traveling at velocity v_0 hits an iron block of mass M = 2.95 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 56 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the incoming speed of the bullet v_0 before it hits the iron block which reaches a height of h = 2.1 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+The variable list is m, v_0, M, v_1, and h
+
+Perform rotation on m, v_1, M, and h
+
+ask h and store in JSON.
+
+A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+{
+            "id":"",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"h",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+ask m and store in JSON then ask v_1 and store in a separate JSON then ask M and store in a separate JSON
+
+
+
+{
+            "id":"1",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"h",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+},
+
+{
+            "id":"2",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v2 = 35 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v1 = 50 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What speed was the incoming bullet v0 traveling before it hit the iron block? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"v0",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+},
+
+{
+            "id":"3",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v2 = 35 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v1 = 50 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the mass of the iron block M? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"M",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+},
+
+{
+            "id":"4",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the mass of the rubber bullet m? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"m",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+},
