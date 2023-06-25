@@ -148,15 +148,184 @@ id = v1b4, svg-img = 3, wolfram-alpha-string = solve {m1 v1 = m1 u1 + m2 u2; 0.5
 }",
     "notes":"Works fine!",
     "questions":""
+  }
+
+},
+{
+  {
+    "id":"C1",
+    "prompt":" I am trying to rotate variables of a physics problem and place all rotated variable problems and its associated information into a JSON Structure. Store key information of a physics problem in JSON strcuture. The JSON includes a key for the id number, problem text, the answer, what varaible the problem solves for, an svg image, and a section for a wolfram alpha string. The wolfram alpha string is left blank.
+
+the empty JSON looks like this:
+
+{
+            "id":"",
+            "problem-text":"",
+            "solution":"",
+            "solves-for":"",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+Here is an example
+
+A rubber bullet of mass m = 0.23 \mathrm{kg} traveling at velocity v_0 hits an iron block of mass M = 2.95 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 56 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the incoming speed of the bullet v_0 before it hits the iron block which reaches a height of h = 2.1 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+The variable list is m, v_0, M, v_1, and h
+
+Perform rotation on m, v_1, M, and h
+
+ask h and store in JSON.
+
+A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+{
+            "id":"",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"h",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+ask M and store in JSON
+",
+    "result:"{
+            "id":"",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M initially hanging at rest from a massless rope.  After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the mass of the iron block M?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"M",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}",
+    "notes":"",
+    "questions":""
+  },
+  {
+    "id":"C2",
+    "prompt":"ask for m and store in JSON",
+    "result":"{
+            "id":"",
+            "problem-text":"A rubber bullet of mass m traveling at velocity v1 = 50 \mathrm{m/s} hits an iron black of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the mass of the rubber bullet m ?   (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"m",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+ask for v2 and store in JSON
+
+{
+            "id":"",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v_1 hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, what velocity of the bullet is after it bounces back v2?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"v2",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}",
+    "notes":"Follows after C1 prompt, temp = 1.31. max length = 2167",
+    "questions":""
+  },
+  {
+    "id":"C3",
+    "prompt":"Here is a new problem
+
+You have a slingshot that is designed to launch a ball at a target below. The sling of the slingshot has a length of l_0 = 0.95\mathrm{m} when it is relaxed. The sling has an elasticity (spring constant) of k = 560\mathrm{N/m}, and shoots at an angle of \theta = 25.00\degree with respect to the horizon. You stretch the sling to a length of l = 1.10\mathrm{m} before launching the ball with a velocity of v = 5.85\mathrm{m/s} just passing the frame of the sling. What is the mass of the ball? Retain your answers to 2 decimal places
+
+rotate the list of variables l_0, k, l, and v
+store in JSON
+
+ask l_0 and store in JSON",
+    "result":"{
+            "id":"",
+            "problem-text":"You have a slingshot that is designed to launch a ball at a target below. The sling of the slingshot has a length of l_0 when it is relaxed. The sling has an elasticity (spring constant) of k = 560\mathrm{N/m}, and shoots at an angle of \theta = 25.00\degree with respect to the horizon. You stretch the sling to a length of l = 1.10\mathrm{m} before launching the ball with a velocity of v = 5.85\mathrm{m/s} just passing the frame of the sling. What is the length of the relaxed sling of the slingshot l_0? Retainyour answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"l_0",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+",
+    "notes":"temp = 1.31, max length = 2167",
+    "questions":""
+  },
+  {
+    "id":"c4",
+    "prompt":"ask k and store in JSON then ask for v and store in a separate JSON",
+    "result":"
+{
+            "id":"",
+            "problem-text":"You have a slingshot that is designed to launch a ball at a target below. The sling of the slingshot has a length of l_0 = 0.95\mathrm{m} when it is relaxed. The sling has an elasticity (spring constant) of k when it is stressed. It shoots at an angle of \theta = 25.00\degree with respect to the horizon. You stretch the sling to a length of l = 1.10\mathrm{m} before launching the ball with a velocity of v = 5.85\mathrm{m/s} just passing the frame of the sling. What is the elasticity of the stretched sling k? Retain your answers to 2 decimal places.",
+            "solution":"",
+            "solves-for":"k",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+
+{
+            "id":"",
+            "problem-text":"You have a slingshot that is designed to launch a ball at a target below. The sling of the slingshot has a length of l_0 = 0.95\mathrm{m} when it is relaxed. The sling has an elasticity (spring constant) of k = 560\mathrm{N/m}, and shoots at an angle of \theta = 25.00\degree with respect to the horizon. You stretch the sling to a length of l = 1.10\mathrm{m} before launching the ball with what velocity of the bullet v ?    (Assume that the rope remains tight during the entire process). Retain your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"v",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}",
+    "notes":"",
+    "questions":""
+  },
+  {
+    "id":"c5",
+    "prompt":"Here is a new problem
+
+A block of mass m = 4.70\mathrm{kg} slides down from an inclined frictionless ramp that forms an angle \theta = 36.19\degree with the ground. A long spring with a relaxed length s_0 = 0.65\mathrm{m} is situated at the base of the ramp. The block started at a distance d = 2.11\mathrm{m} from the tip of the relaxed spring, with an initial velocity v = 4.23\mathrm{m/s} down the ramp. It compressed the spring to a length of s = 0.19\mathrm{m} before temporarily coming to a stop. What is the spring constant of the spring? Round your answer to 2 decimal places.
+
+The list of variables is m, s_0, d, v, and s
+Store each rotation in a JSON structure
+
+ask m and store in JSON then ask for s_0 and store in a separate JSON then ask for d and store in a separate JSON and then ask for s and store in a separate JSON",
+    "result":"{
+            "id":"",
+            "problem-text":"A block of mass m slides down from an inclined frictionless ramp that forms an angle \theta = 36.19\degree with the ground. A long spring with a relaxed length s_0 is situated at the base of the ramp. The block started at a distance d = 2.11\mathrm{m} from the tip of the relaxed spring, with an initial velocity v = 4.23\mathrm{m/s} down the ramp. It compressed the spring to a length of s before temporarily coming to a stop. What is the female mass m ? Round your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"m",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+{
+            "id":"",
+            "problem-text":"A block of mass m = 4.70\mathrm{kg} slides down from an inclined frictionless ramp that forms an angle \theta = 36.19\degree with the ground. A long spring with a relaxed length s_0 what is the length of the relaxed spring from the tip of the spring when it is unstretched s_0?  Round your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"s_0",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+{
+            "id":"",
+            "problem-text":"A block of mass m = 4.70\mathrm{kg} slides down from an inclined frictionless ramp that forms an angle \theta = 36.19\degree with the ground. A long spring with a relaxed length s_0 = 0.65\mathrm{m} is situated at the base of the ramp. The block started at what distance from the relaxed spring before the it started down the ramp d?  Round your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"d",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+{
+            "id":"",
+            "problem-text":"    A block of mass m = 4.70\mathrm{kg} slides down from an inclined frictionless ramp that forms an angle \theta = 36.19\degree with the ground. A long spring with a relaxed length s_0 = 0.65\mathrm{m} is situated at the base of the ramp. The block started at a distance d = 2.11\mathrm{m} from the tip of the relaxed spring, with an initial velocity v = 4.23\mathrm{m/s} down the ramp. It compressed the sls small to what length s ? Round your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"s",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}",
+    "notes":"Follows in the train of c prompts.",
+    "questions":""
   },
   {
     "id":"",
-    "prompt":" ",
-    "result:"",
+    "prompt":"",
+    "result":"",
     "notes":"",
     "questions":""
-  }
-  {
-    
   }
 }

@@ -1,0 +1,65 @@
+To prompt GPT for problem rotation, use the following skeleton:
+
+Question:
+I am trying to create physics problems based on a template using a technique called rotation of variables. Here is an example.
+
+[A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.]
+
+variable list {M, v1, v2, h, m}
+
+Rotate the variable and ask for the following variables {M, v1}:
+
+ask for M
+
+A rubber bullet of mass m = 0.15 \mathrm{kg} traveling at velocity v_0 = 45 \mathrm{m/s} hits an iron block initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 39 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the mass M of the iron block if it reaches a height of h = 2 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+ask for v1
+
+A rubber bullet of mass m = 0.23 \mathrm{kg} traveling at velocity v_0 hits an iron block of mass M = 2.95 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 56 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the incoming speed of the bullet v_0 before it hits the iron block which reaches a height of h = 2.1 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+Here is a new problem: A rubber bullet of mass m = 0.035 \mathrm{kg} traveling at velocity v_0 = 35 \mathrm{m/s} hits a wooden block of mass M = 5 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and travels with the block. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the wooden block and bullet reach after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places?
+
+Rotate the variables and ask for the following: {m, M}
+
+ask m
+
+Answer:
+
+By providing examples for rotation fo variables, we train the model to rotate variables on its own.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Similarly for storing information in JSON.
+
+Question: Store key information of a physics problem in JSON strcuture. The JSON includes a key for the id number, problem text, the answer, what varaible the problem solves for, an svg image, and a section for a wolfram alpha string. The wolfram alpha string is left blank.
+
+the empty JSON looks like this:
+
+{
+            "id":"V1A1",
+            "problem-text":"",
+            "solution":"",
+            "solves-for":"",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+Give the problem, is, and svg-img and ask for the JSON
+
+A rubber bullet of mass m = 0.035 \mathrm{kg} traveling at velocity v_0 = 35 \mathrm{m/s} hits a wooden block of mass M = 5 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and travels with the block. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the wooden block and bullet reach after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places?
+
+id = V1A1, svg-img = 1
+
+The JSON looks like:
+
+{
+            "id":"V1A1",
+            "problem-text":"A rubber bullet of mass m = 0.035 \mathrm{kg} traveling at velocity v_0 = 35 \mathrm{m/s} hits a wooden block of mass M = 5 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and travels with the block. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the wooden block and bullet reach after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places?",
+            "solution":"",
+            "solves-for":"h",
+            "svg-img":"1",
+            "wolfram-alpha-string":"",
+}
+
+Here is a new problem
+
+Now, the goal is to combine these two distinct prompts into a singular prompt that performs rotation on a single problem for as many times as asked and then tucks all the problems into a JSON structure.
