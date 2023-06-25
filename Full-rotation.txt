@@ -1,3 +1,6 @@
+Settings: Temp = 1
+Max length = 2001
+
 I am trying to rotate variables of a physics problem and place all rotated variable problems and its associated information into a JSON Structure. Store key information of a physics problem in JSON strcuture. The JSON includes a key for the id number, problem text, the answer, what varaible the problem solves for, an svg image, and a section for a wolfram alpha string. The wolfram alpha string is left blank.
 
 the empty JSON looks like this:
