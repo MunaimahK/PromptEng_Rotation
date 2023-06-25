@@ -1,43 +1,162 @@
 {
+  "note":"temp = 0.8, maximum lenght = 1714"
   {
     "id":"1",
-    "prompt":"
-      Question: A boy jumps off a building of 10 ft. How high is the building? Create a Question and Answer pair and put all the output in the following JSON structure:
-      [
-       {
-           Q : "A boy jumps off a building of 10 ft. How high is the building?",
-           A : "10 ft."
-       }
-      ]
-",
-    "result":"
-      [
-       {
-           Q : "A boy jumps off a building of 10 ft. How high is the building?",
-           A : "10 ft."
-       }
-      ]",
-    "notes":"Simple training of the model to place answer and question in correct key value pairs",
-    "questions":""
+    "prompt":"I am trying to create physics problems based on a template using a technique called rotation of variables. Here is an example.
+
+    [A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.]
+
+    variable list {M, v1, v2, h, m}
+
+    Rotate the variable and ask for the following variables {M, v1}:
+
+    ask for M
+
+    A rubber bullet of mass m = 0.15 \mathrm{kg} traveling at velocity v_0 = 45 \mathrm{m/s} hits an iron block initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 39 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the mass M of the iron block if it reaches a height of h = 2 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+    ask for v1
+
+    A rubber bullet of mass m = 0.23 \mathrm{kg} traveling at velocity v_0 hits an iron block of mass M = 2.95 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 56 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. What is the incoming speed of the bullet v_0 before it hits the iron block which reaches a height of h = 2.1 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+    Here is a new problem: A rubber bullet of mass m = 0.035 \mathrm{kg} traveling at velocity v_0 = 35 \mathrm{m/s} hits a wooden block of mass M = 5 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and travels with the block. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the wooden block and bullet reach after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places?
+
+    Rotate the variables and ask for the following: {m, M}
+
+    ask m",
+    "result": "A wooden block of mass M = 0.54 \mathrm{kg} initially hanging at rest from a massless rope is struck by a rubber bullet traveling at velocity v_0 = 35 \mathrm{m/s}. After the collision, the bullet is embedded in the block and the two objects travel together. The effect of gravity on the bullet alone can be ignored. What is the mass m of the bullet that will cause the wooden block and bullet to reach a height of h = 3.76 \mathrm{m} after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+    "notes": "Succesfully rotates for the variable m. Assigns numerical values even though they are not provided.",
+    "questions":"Will range come into play? Should the prompt include a range for variables?"
   },
   {
     "id":"2",
-    "prompt":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v_0 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places. Create a Question and Answer pair and put all the output in the following JSON structure:",
-    "result":"
-      [
-       {
-           Q : "A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v_0 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
-           A : "5.76 m."
-       }
-      ]",
-    "notes":"Generates an answer and places in the answer key-value pair.",
+    "prompt":"Question: ask M, v_0, and h",
+    "result":"A rubber bullet of mass m = 0.074 \mathrm{kg} traveling at velocity v_0 = 40 \mathrm{m/s} hits a wooden block initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and the two objects travel together. The effect of gravity on the bullet alone can be ignored. What is the mass M of the wooden block and the maximum height h it will reach after the collision, if the rope remains tight during the entire process? Retain your final answer to 2 decimal places",
+    "notes":"The prompt follows after the prompt with id = 1. The result only rotates firs tvariabel listed",
+    "questions":""
+  },
+  {
+    "id":"3"
+    "prompt":"ask v_0",
+    "result":"A rubber bullet of mass m = 0.093 \mathrm{kg} hits a wooden block of mass M = 7 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and the two objects travel together, reaching a maximum height h = 4.21 \mathrm{m}. The effect of gravity on the bullet alone can be ignored. What is the incoming speed of the bullet v_0 before it hits the wooden block? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+    "notes":"uses same initial prompt as id = 1",
+    "questions":"Can this be prompted to rotate all variables in one question?"
+  }
+},
+{
+  {
+    "id":"B1",
+    "prompt":"Question: Store key information of a physics problem in JSON strcuture. The JSON includes a key for the id number, problem text, the answer, what varaible the problem solves for, an svg image, and a section for a wolfram alpha string. The wolfram alpha string is left blank.
+
+the empty JSON looks like this:
+
+      {
+            "id":"V1A1",
+            "problem-text":"",
+            "solution":"",
+            "solves-for":"",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+      }
+
+Give the problem, is, and svg-img and ask for the JSON
+
+A rubber bullet of mass m = 0.035 \mathrm{kg} traveling at velocity v_0 = 35 \mathrm{m/s} hits a wooden block of mass M = 5 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and travels with the block. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the wooden block and bullet reach after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places?
+
+id = V1A1, svg-img = 1
+
+The JSON looks like:
+
+{
+            "id":"V1A1",
+            "problem-text":"A rubber bullet of mass m = 0.035 \mathrm{kg} traveling at velocity v_0 = 35 \mathrm{m/s} hits a wooden block of mass M = 5 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet is embedded in the block and travels with the block. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the wooden block and bullet reach after the collision? (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places?",
+            "solution":"",
+            "solves-for":"h",
+            "svg-img":"1",
+            "wolfram-alpha-string":"",
+}
+
+Here is a new problem
+
+A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.
+
+ask for JSON where id  = V1A2, svg-img = 2",
+    "result:"
+        {
+            "id":"V1A2",
+            "problem-text":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v1 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v2 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"h",
+            "svg-img":"2",
+            "wolfram-alpha-string":"",
+        }",
+    "notes":"",
+    "questions":""
+  },
+  {
+    "id":"B2",
+    "prompt":"Here is a new problem
+
+Block 1 of mass m_1 = 0.86 \mathrm{kg} slides on frictionless surface with velocity v_i = 7.6 \mathrm{m/s} and hits block 2 of mass m_2 = 3.5 \, \mathrm{kg}. After the collision, Block 1 keeps sliding forward with a small velocity v_f = 0.42 \mathrm{m/s}. Block 2 is fixed to a spring which was initially at rest length. The spring is compressed by L = 1.1 \mathrm{m} and the spring has some spring constant k. If the collision occurs instantaneously, what is the spring constant k? Please retain your answer to 2 decimal places.
+
+ask for JSON where id  = V1B1, svg-img = 2",
+    "result:"{
+            "id":"V1B1",
+            "problem-text":"Block 1 of mass m_1 = 0.86 \mathrm{kg} slides on frictionless surface with velocity v_i = 7.6 \mathrm{m/s} and hits block 2 of mass m_2 = 3.5 \, \mathrm{kg}. After the collision, Block 1 keeps sliding forward with a small velocity v_f = 0.42 \mathrm{m/s}. Block 2 is fixed to a spring which was initially at rest length. The spring is compressed by L = 1.1 \mathrm{m} and the spring has some spring constant k. If the collision occurs instantaneously, what is the spring constant k? Please retain your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"k",
+            "svg-img":"2",
+            "wolfram-alpha-string":"",
+}",
+    "notes":"Correctly places solves-for. Uses prompt from id = B1.",
+    "questions":""
+  },
+  {
+    "id":"B3",
+    "prompt":"Here is a new problem
+
+Block 1 of mass m_1 = 0.86 \mathrm{kg} slides on frictionless surface with velocity v_i = 7.6 \mathrm{m/s} and hits block 2 of mass m_2 = 3.5 \, \mathrm{kg}. After the collision, Block 1 keeps sliding forward with a small velocity v_f = 0.42 \mathrm{m/s}. Block 2 is fixed to a spring which was initially at rest length. The spring is compressed by L = 1.1 \mathrm{m} and the spring has some spring constant k. If the collision occurs instantaneously, what is the spring constant k? Please retain your answer to 2 decimal places.
+
+ask for JSON where id  = V1B1, svg-img = 2, wolfram-alpha-string = solve {u2 = (m1 v1 - m1 u1)/m2; L=sqrt((m2 (u2)^2)/k); L = 1.1; v1 = 7.6; u1 = 0.42; m1 = .86; m2 = 3.5} for k",
+    "result:"
+{
+            "id":"V1B1",
+            "problem-text":"Block 1 of mass m_1 = 0.86 \mathrm{kg} slides on frictionless surface with velocity v_i = 7.6 \mathrm{m/s} and hits block 2 of mass m_2 = 3.5 \, \mathrm{kg}. After the collision, Block 1 keeps sliding forward with a small velocity v_f = 0.42 \mathrm{m/s}. Block 2 is fixed to a spring which was initially at rest length. The spring is compressed by L = 1.1 \mathrm{m} and the spring has some spring constant k. If the collision occurs instantaneously, what is the spring constant k? Please retain your answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"k",
+            "svg-img":"2",
+            "wolfram-alpha-string":"solve {u2 = (m1 v1 - m1 u1)/m2; L=sqrt((m2 (u2)^2)/k); L = 1.1; v1 = 7.6; u1 = 0.42; m1 = .86; m2 = 3.5} for k",
+}",
+    "notes":"Stopped generated result after the fourth occurence of u in the wolfram alpha string. Manually completed the wolfram string and hit enter again to complete.",
+    "questions":"Is ; a stop sequence issue?"
+    "answer":" Maximum length set to 256, was too low for entire answer generation"
+  },
+  {
+    "id":"B4",
+    "prompt":"Here is a new problem
+
+Two small carts, 1 and 2, are on a nearly frictionless track connected smoothly to a frictionless hill. Cart 1 weighs m1 = 800 \mathrm{kg} and cart 2 weighs m2 = 2200\mathrm{kg}. Cart 1 was moving with velocity v_0 to the left, before it struck cart 2 which was initially stationary and rebounds with velocity v1 = 9 \mathrm{m/s} in the opposite direction. After the collision, cart 2 reaches a height h = 15 \mathrm{m}. If the collision is instantaneous, what velocity v_0 does cart 1 have before it strikes cart 2?
+
+
+id = v1b4, svg-img = 3, wolfram-alpha-string = solve {m1 v1 = m1 u1 + m2 u2; 0.5 m2 (u2)^2 = m2 g h; m2 = 2200; g = 9.8; m1 = 800; h = 15; u1 = -9} for v1 and u2",
+    "result:"{
+            "id":"V1B4",
+            "problem-text":"Two small carts, 1 and 2, are on a nearly frictionless track connected smoothly to a frictionless hill. Cart 1 weighs m1 = 800 \mathrm{kg} and cart 2 weighs m2 = 2200\mathrm{kg}. Cart 1 was moving with velocity v_0 to the left, before it struck cart 2 which was initially stationary and rebounds with velocity v1 = 9 \mathrm{m/s} in the opposite direction. After the collision, cart 2 reaches a height h = 15 \mathrm{m}. If the collision is instantaneous, what velocity v_0 does cart 1 have before it strikes cart 2?",
+            "solution":"",
+            "solves-for":"v_0",
+            "svg-img":"3",
+            "wolfram-alpha-string":"solve {m1 v1 = m1 u1 + m2 u2; 0.5 m2 (u2)^2 = m2 g h; m2 = 2200; g = 9.8; m1 = 800; h = 15; u1 = -9} for v1 and u2",
+}",
+    "notes":"Works fine!",
     "questions":""
   },
   {
     "id":"",
-    "prompt":"",
-    "result":"",
+    "prompt":" ",
+    "result:"",
     "notes":"",
     "questions":""
+  }
+  {
+    
   }
 }
