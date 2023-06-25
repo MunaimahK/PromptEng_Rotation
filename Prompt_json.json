@@ -1,16 +1,36 @@
 {
   {
-    "id":"",
-    "prompt":"",
-    "result":"",
-    "notes":"",
+    "id":"1",
+    "prompt":"
+      Question: A boy jumps off a building of 10 ft. How high is the building? Create a Question and Answer pair and put all the output in the following JSON structure:
+      [
+       {
+           Q : "A boy jumps off a building of 10 ft. How high is the building?",
+           A : "10 ft."
+       }
+      ]
+",
+    "result":"
+      [
+       {
+           Q : "A boy jumps off a building of 10 ft. How high is the building?",
+           A : "10 ft."
+       }
+      ]",
+    "notes":"Simple training of the model to place answer and question in correct key value pairs",
     "questions":""
   },
   {
-    "id":"",
-    "prompt":"",
-    "result":"",
-    "notes":"",
+    "id":"2",
+    "prompt":"A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v_0 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places. Create a Question and Answer pair and put all the output in the following JSON structure:",
+    "result":"
+      [
+       {
+           Q : "A rubber bullet of mass m = 0.25 \mathrm{kg} traveling at velocity v_0 = 50 \mathrm{m/s} hits an iron block of mass M = 15 \mathrm{kg} initially hanging at rest from a massless rope. After the collision, the bullet bounced straight back at a velocity of v_1 = 35 \mathrm{m/s}. The effect of gravity on the bullet alone can be ignored. To what maximum height h will the iron block reach after the collision?  (Assume that the rope remains tight during the entire process). Retain your final answer to 2 decimal places.",
+           A : "5.76 m."
+       }
+      ]",
+    "notes":"Generates an answer and places in the answer key-value pair.",
     "questions":""
   },
   {
