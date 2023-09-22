@@ -1,1 +1,103 @@
-Rotation of Variables Prompt:
+Rotation of Variables Prompt 9-22-2023
+
+PROMPT:
+
+I am trying to rotate variables of a physics problem and place all rotated variable problems and its associated information into a JSON Structure. Store key information of a physics problem in JSON strcuture. The JSON includes a key for the id number, problem text, the answer, what varaible the problem solves for, an svg image, and a section for a wolfram alpha string. The wolfram alpha string is left blank.
+
+the empty JSON looks like this:
+
+{
+            "id":"",
+            "problem-text":"",
+            "solution":"",
+            "solves-for":"",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+Here is an example
+
+A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the magnitude of the angular momentum of the puck-rod-disk system? 
+
+The variable list is omega, d, M_r, L, M_D, R, and m
+
+Perform rotation on d, M_r, L, M_D, R, and m
+
+ask d and store in JSON.
+
+A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the distance d of the puck-rod-disk system? 
+
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the distance d of the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"d",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+ask m and store in JSON then ask M_r and store in a separate JSON then ask L and store in a separate JSON then ask M_D and store in a separate JSON then ask R and store in a separate JSON
+
+
+
+"""
+
+#d JSON
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the distance d of the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"d",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+#m JSON
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the mass m of the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"m",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+#M_r JSON
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the mass M_r of the rod in the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"M_r",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+#L JSON
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the length L of the rod in the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"L",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+#M_D JSON
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the mass M_D of the disk in the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"M_D",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}
+
+#R JSON
+{
+            "id":"",
+            "problem-text":"A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the radius R of the disk in the puck-rod-disk system?  Retain your final answer to 2 decimal places.",
+            "solution":"",
+            "solves-for":"R",
+            "svg-img":"",
+            "wolfram-alpha-string":"",
+}<|im_sep|>
