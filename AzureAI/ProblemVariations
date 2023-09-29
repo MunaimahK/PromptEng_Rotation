@@ -1,26 +1,23 @@
 I am trying to change the problem text of a physics problem so that it models a new system. Here is an example
 
-For a system:
 
-Axis at disk center with an Off center Rod
 
-The problem text is:
+## Problem stem: Axis at disk center with an Off center Rod
 
-A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the magnitude of the angular momentum of the puck-rod-disk system? 
+## Problem text: A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the disk and is at a distance d away from the near end of the thin rod. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the magnitude of the angular momentum of the puck-rod-disk system? 
 
-For a system:
-
-Axis at Rod Center with an off Center Disk, 
+## Problem stem: Axis at Rod Center with an off Center Disk, 
 
 The problem text is:
 
 A mechanical system consisting of the thin rod, a solid disk, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the center of the rod and is at a distance d away from the near end of the disk. The mass of the rod is M_r and the length of the rod is L, while the mass of the disk is M_D and the radius of the disk is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the magnitude of the angular momentum of the puck-rod-disk system? 
 
-Now, change the text for a system:
 
-Axis at End of Rod with a wheel with massless spoke
+## Problem stem: Axis at End of Rod with a wheel with massless spoke
 
 Problem text:
 A mechanical system consisting of the thin rod, a wheel with massless spoke, and a small solid puck all fixed together is rotating around a single frictionless axis at angular velocity \omega shown in the figure. The axis is located at the end of the rod and is at a distance d away from the near end of the wheel. The mass of the rod is M_r and the length of the rod is L, while the mass of the wheel is M_W and the radius of the wheel is R. The small puck can be seen as a point particle of mass m which is fixed to the thin rod at distance l away from the pivot, as shown in the figure. What is the magnitude of the angular momentum of the puck-rod-wheel system? 
 
-I hope this helps you understand how to change the problem text for different systems. Remember to change the names of the objects and their properties as well as the location of the axis of rotation. Good luck!<|im_end|>
+## Problem stem:
+
+Stop sequence: ## Problem stem:
